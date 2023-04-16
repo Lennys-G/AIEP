@@ -20,9 +20,8 @@ Los nombres de los archivos que componen el repositorio estarán estructurados d
     - ...
 
 - `Unidad_2`:  Contiene todos los archivos desarrollados en el módulo.
-    - `Semana_1`: Contiene todos los archivos necesarios para la actividad práctica de la primera semana.
-    - `Semana_2`: Contiene todos los archivos necesarios para la actividad práctica de la segunda semana..
-    - `Semana_3`: Contiene todos los archivos necesarios para la actividad práctica de la tercera semana.
+    - `Semana_4`: Contiene todos los archivos necesarios para la actividad práctica de la cuarta semana.
+    - `Semana_5`: Contiene todos los archivos necesarios para la actividad práctica de la quinta semana..
     - ...
 
 Cada carpeta de actividad contiene un archivo README.md que describe la tarea a realizar y los archivos necesarios para completarla.
