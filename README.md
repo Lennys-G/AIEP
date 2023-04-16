@@ -13,16 +13,16 @@ Para realizar las actividades prácticas, es necesario tener instalado un entorn
 
 Los nombres de los archivos que componen el repositorio estarán estructurados de la siguiente manera: Carpeta de la unidad, dentro de ella una carpeta de la semana y, seguido, el número correspondiente a la semana en la que se desarrolló el trabajo.
 
-- `Unidad-1`:  Contiene todos los archivos desarrollados en el módulo.
-    - `Semana-1`: Contiene todos los archivos necesarios para la actividad práctica de la primera semana.
-    - `Semana-2`: Contiene todos los archivos necesarios para la actividad práctica de la segunda semana..
-    - `Semana-3`: Contiene todos los archivos necesarios para la actividad práctica de la tercera semana.
+- `Unidad_1`:  Contiene todos los archivos desarrollados en el módulo.
+    - `Semana_1`: Contiene todos los archivos necesarios para la actividad práctica de la primera semana.
+    - `Semana_2`: Contiene todos los archivos necesarios para la actividad práctica de la segunda semana..
+    - `Semana_3`: Contiene todos los archivos necesarios para la actividad práctica de la tercera semana.
     - ...
 
-- `Unidad-2`:  Contiene todos los archivos desarrollados en el módulo.
-    - `Semana-1`: Contiene todos los archivos necesarios para la actividad práctica de la primera semana.
-    - `Semana-2`: Contiene todos los archivos necesarios para la actividad práctica de la segunda semana..
-    - `Semana-3`: Contiene todos los archivos necesarios para la actividad práctica de la tercera semana.
+- `Unidad_2`:  Contiene todos los archivos desarrollados en el módulo.
+    - `Semana_1`: Contiene todos los archivos necesarios para la actividad práctica de la primera semana.
+    - `Semana_2`: Contiene todos los archivos necesarios para la actividad práctica de la segunda semana..
+    - `Semana_3`: Contiene todos los archivos necesarios para la actividad práctica de la tercera semana.
     - ...
 
 Cada carpeta de actividad contiene un archivo README.md que describe la tarea a realizar y los archivos necesarios para completarla.
