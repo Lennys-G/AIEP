@@ -17,6 +17,7 @@ def get_validated_num(value):
             value = input(message_error)
 
 
+def get_validated_operator(value):
     """ Esta función recibe un valor y valida que sea un operador """
     list_operation = ["+", "-", "*", "/"]
     return value if value in list_operation else get_validated_operator(
