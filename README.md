@@ -3,7 +3,7 @@ Actividades del módulo Fundamentos de Programación
 
 # Fundamentos de Programación - Actividades Prácticas
 
-Este repositorio contiene las actividades prácticas del módulo de Fundamentos de Programación. Cada carpeta representa una actividad práctica y contiene los archivos necesarios para completar la tarea.
+Este repositorio contiene las actividades prácticas del módulo de Fundamentos de Programación.
 
 ## Contribuir
 
