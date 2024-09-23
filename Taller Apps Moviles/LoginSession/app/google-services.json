@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "672678855909",
+    "project_id": "loginsessionandroid",
+    "storage_bucket": "loginsessionandroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672678855909:android:a4283706174d70780d800c",
+        "android_client_info": {
+          "package_name": "cl.aiep.loginsession"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8RFsNTKHD83NN9JZO1WT2V92feFvPM10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
