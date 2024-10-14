@@ -1,6 +1,7 @@
 package cl.aiep.loginsession
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -20,9 +21,9 @@ import com.google.firebase.ktx.Firebase
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private lateinit var locationTv: TextView
     private lateinit var database: DatabaseReference
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -37,19 +38,25 @@ class HomeActivity : AppCompatActivity() {
         // Inicializar el cliente de ubicación
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
-        // Obtener el TextView para mostrar la ubicación
-        locationTv = findViewById(R.id.LocationTv)
-
-        // Configurar botón de logout
+        // Evento click del botón de logout
         val logoutButton = findViewById<Button>(R.id.logoutButton)
         logoutButton.setOnClickListener {
             auth.signOut()
-            Toast.makeText(this, "Sesión cerrada.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Sesión cerrada.", Toast.LENGTH_SHORT).show() //Muestra mensaje de cierre de sesión
             val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
+            startActivity(intent) //Devuelve la pantala de inicio de sesipon
+            finish() //Cierra la vista de home
         }
-
+        val btnCalcularDespacho = findViewById<Button>(R.id.btnCalcularDespacho)
+        btnCalcularDespacho.setOnClickListener{
+            val intent = Intent(this, CalcularDespachoActivity::class.java)
+            startActivity(intent)
+        }
+        val btnMapsView = findViewById<Button>(R.id.btnMapsView)
+        btnMapsView.setOnClickListener{
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
+        }
         // Verificar permisos de ubicación
         checkLocationPermission()
     }
@@ -68,6 +75,7 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+    //Solicita al usuario el permiso para acceder a su ubicación
     private fun requestLocationPermission() {
         ActivityCompat.requestPermissions(
             this,
@@ -87,7 +95,7 @@ class HomeActivity : AppCompatActivity() {
                 // Permiso concedido, obtener la ubicación
                 getLocation()
             } else {
-                Toast.makeText(this, "Permiso de ubicación denegado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Permiso de ubicación denegado", Toast.LENGTH_SHORT).show() //Muestra mensaje de permiso denegado
             }
         }
     }
@@ -103,13 +111,12 @@ class HomeActivity : AppCompatActivity() {
                 if (location != null) {
                     // Mostrar la ubicación en el TextView
                     val latLng = "Latitud: ${location.latitude}, Longitud: ${location.longitude}"
-                    locationTv.text = latLng
 
                     // Guardar la ubicación en Firebase Realtime Database
                     saveLocationToFirebase(location.latitude, location.longitude)
 
                 } else {
-                    locationTv.text = "No se pudo obtener la ubicación"
+                    Toast.makeText(this, "No se pudo obtener la ubicación.", Toast.LENGTH_SHORT).show()
                 }
             }.addOnFailureListener {
                 Toast.makeText(this, "No se pudo obtener la ubicación.", Toast.LENGTH_SHORT).show()
@@ -124,6 +131,7 @@ class HomeActivity : AppCompatActivity() {
             "longitude" to longitude
         )
 
+        // Mostrar mensaje de éxito o error al guardar la ubicación
         database.child("location").setValue(userLocation)
             .addOnSuccessListener {
                 Toast.makeText(this, "Ubicación guardada correctamente.", Toast.LENGTH_SHORT).show()

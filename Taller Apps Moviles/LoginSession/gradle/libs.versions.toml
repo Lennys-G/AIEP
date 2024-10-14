@@ -12,6 +12,9 @@ activity = "1.9.2"
 constraintlayout = "2.1.4"
 googleServiceVersion = "4.4.2"
 googleServicesLocation = "21.3.0"
+googleMaps = "19.0.0"
+googlePlaces = "4.0.0"
+firebaseFirestoreKtx = "25.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -27,9 +30,13 @@ firebase-auth = { module = "com.google.firebase:firebase-auth", version = "23.0.
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version = "23.0.0" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-database = {module = "com.google.firebase:firebase-database", version = "21.0.0" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
 
 
 play-services-location = { module="com.google.android.gms:play-services-location", version.ref = "googleServicesLocation"}
+google-maps = {module ="com.google.android.gms:play-services-maps", version.ref = "googleMaps"}
+google-place = {module ="com.google.android.libraries.places:places", version.ref = "googlePlaces"}
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

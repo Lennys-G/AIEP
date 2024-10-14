@@ -43,6 +43,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.firestore.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -53,6 +54,8 @@ dependencies {
     implementation(libs.firebase.database)
 
     implementation(libs.play.services.location)
+    implementation(libs.google.maps)
+    implementation(libs.google.place)
 
 
 

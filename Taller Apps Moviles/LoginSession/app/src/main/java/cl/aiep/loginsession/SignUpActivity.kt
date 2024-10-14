@@ -2,7 +2,6 @@ package cl.aiep.loginsession
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -19,7 +18,7 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_sign_up)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.map)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -28,22 +27,18 @@ class SignUpActivity : AppCompatActivity() {
 
         //Inicializar Firebase Auth
         val auth = Firebase.auth
-
         // Acceder a los EditText (input de email y password)
         val emailEditText = findViewById<EditText>(R.id.editTextEmail)
         val passwordEditText = findViewById<EditText>(R.id.editTextPassword)
-
         // Acceder a los botones (SignUp y Login)
         val signUpButton = findViewById<Button>(R.id.signUpButton)
         val loginButton = findViewById<Button>(R.id.loginButton)
-
         // Manejar el clic del botón Login
         loginButton.setOnClickListener {
             // Navegar a la pantalla de LoginActivity
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-
         //Manejar clic del botón de Sign Up
         signUpButton.setOnClickListener {
             val email = emailEditText.text.toString()
@@ -53,7 +48,6 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "Por favor, complete todos los campos.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
             // Crear un nuevo usuario con Firebase Auth
             auth.createUserWithEmailAndPassword(email, password) // Crear usuario con email y contraseña
                 .addOnCompleteListener { task ->
